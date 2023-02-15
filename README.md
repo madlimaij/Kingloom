@@ -1,2 +1,2 @@
 # Kingloom
-Meie papupood
+A practice app for experimenting.
