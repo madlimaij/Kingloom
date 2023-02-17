@@ -1,5 +1,6 @@
 .root {
   --button-bg-color: #ffffff;
+  box-sizing: border-box;
 }
 
 header {
@@ -25,10 +26,10 @@ h5 {
 
 footer {
   border-top: 0.5px solid gray;
-  margin: 0 -20px;
   padding: 20px 30px;
   position: sticky;
   text-align: center;
+  height: 17vh;
 }
 
 a:link,
@@ -46,11 +47,6 @@ a:active {
   color: rgb(255, 255, 255);
 }
 
-button {
-  font-family: monospace;
-  background-color: snow;
-}
-
 .bubble {
   /* separated for future additions */
   margin: 20px;
@@ -59,6 +55,11 @@ button {
   height: 50px;
   border: 0.5px solid #3c494d;
   background-color: var(--button-bg-color);
+}
+
+.bubble:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
 .bubble-field {
@@ -108,10 +109,76 @@ button {
   flex-direction: row;
   justify-content: space-around;
   list-style: none;
-  color:lightgoldenrodyellow;
+  color: lightgoldenrodyellow;
   font-weight: bolder;
 }
 
 .menu-list > li:hover {
-  color: #607d8b
+  color: #607d8b;
+}
+
+.side-menu {
+  display: flex;
+  flex-direction: column;
+  min-width: 40px;
+  max-width: 40px;
+  background-color: #f6f19e;
+  position: relative;
+  left: 0;
+  transition: all 3s ease-in-out;
+  transition-delay: 1s;
+}
+
+.side-menu:hover {
+  min-width: 250px;
+  transition: all 2s ease-in-out;
+  transition-delay: 0.1s;
+}
+
+/* .side-button {
+  width: 15px;
+  height: 15px;
+  margin: 5px;
+  align-self: end;
+  background-color: black;
+} */
+
+.menu-list.side {
+  overflow: hidden;
+  flex-direction: column;
+  margin: 200px 50px;
+  color: rgb(36, 104, 136);
+}
+
+.menu-list.side > li {
+  padding-bottom: 10px;
+  color: black;
+}
+
+.menu-list.side > li:hover {
+  color: steelblue;
+}
+
+.more-tooltip {
+  display: none;
+  width: fit-content;
+  height: auto;
+  background-color: aliceblue;
+  border: #3c494d solid 0.5px;
+}
+
+.less-tooltip {
+  display: block;
+  width: fit-content;
+  height: auto;
+  background-color: aliceblue;
+  border: #3c494d solid 0.5px;
+}
+
+.addButton:hover {
+  background-color: black;
+}
+
+.bubble.removeButton:hover ~ .less-tooltip {
+  display: block;
 }

@@ -5,33 +5,42 @@ import Button from './components/Button';
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
-  const numberOfBubbles = 42;
+
   const handleMenu = () => {
-    console.log("Clicked!")
     setShowMenu(!showMenu);
   };
+
   return (
     <div>
       <header>
         <Button onClick={handleMenu} className={'bubble menu-button'} />
         <h1>Web Development Playground</h1>
       </header>
-      <div className={`menu ${showMenu ? "show": ""}`}>
-        <ul className='menu-list'>
+      <div className={`menu ${showMenu ? 'show' : ''}`}>
+        <ul className="menu-list">
           <li>Bubble</li>
           <li>bubble</li>
           <li>bubble</li>
         </ul>
-      </div> 
+      </div>
       <div className="main-body">
+        <div className={`side-menu`}>
+          <div>
+            <ul className="menu-list side">
+              <li>Bubble</li>
+              <li>bubble</li>
+              <li>bubble</li>
+            </ul>
+          </div>
+        </div>
         <div className="bubble-field">
           <div>
-            <BubbleField numberOfBubbles={numberOfBubbles} />
+            <BubbleField />
           </div>
         </div>
       </div>
       <footer>
-        <p>Contact info:</p>
+        <p>Contact me:</p>
         <address>
           <a href="madlimai.joe@gmail.com">madlimai.joe@gmail.com</a>
           <br />
