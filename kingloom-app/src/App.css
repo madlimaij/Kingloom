@@ -1,3 +1,7 @@
+.root {
+  --button-bg-color: #ffffff;
+}
+
 header {
   height: 20vh;
   text-align: center;
@@ -16,11 +20,10 @@ h5 {
 }
 
 .main-body {
-  height: 60vh;
+  display: flex;
 }
 
 footer {
-  grid-area: footer;
   border-top: 0.5px solid gray;
   margin: 0 -20px;
   padding: 20px 30px;
@@ -55,6 +58,7 @@ button {
   width: 50px;
   height: 50px;
   border: 0.5px solid #3c494d;
+  background-color: var(--button-bg-color);
 }
 
 .bubble-field {
@@ -62,4 +66,52 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.menu-button {
+  background-color: lightsteelblue;
+  border: 0;
+}
+
+.menu {
+  height: 0;
+  overflow: hidden;
+  background-color: lightsteelblue;
+  transition: height 0.3s ease-in-out;
+  transition-delay: 0.1s;
+}
+
+.menu.show {
+  display: block;
+  height: 50px;
+  transition: height 0.3s ease-in-out;
+  transition-delay: 0.1s;
+}
+
+/* .menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+} */
+
+/* .menu-button:hover ~ .menu-container .menu {
+  display: block;
+} */
+
+.menu-button:hover {
+  transform: scale(1.2);
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  color:lightgoldenrodyellow;
+  font-weight: bolder;
+}
+
+.menu-list > li:hover {
+  color: #607d8b
 }

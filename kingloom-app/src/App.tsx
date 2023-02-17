@@ -1,18 +1,32 @@
 import React, { useState } from 'react';
 import './App.css';
 import BubbleField from './components/BubbleField';
+import Button from './components/Button';
 
 function App() {
-  const numberOfBubbles = 16
+  const [showMenu, setShowMenu] = useState(false);
+  const numberOfBubbles = 42;
+  const handleMenu = () => {
+    console.log("Clicked!")
+    setShowMenu(!showMenu);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
+    <div>
+      <header>
+        <Button onClick={handleMenu} className={'bubble menu-button'} />
         <h1>Web Development Playground</h1>
       </header>
+      <div className={`menu ${showMenu ? "show": ""}`}>
+        <ul className='menu-list'>
+          <li>Bubble</li>
+          <li>bubble</li>
+          <li>bubble</li>
+        </ul>
+      </div> 
       <div className="main-body">
         <div className="bubble-field">
           <div>
-            <BubbleField numberOfBubbles = {numberOfBubbles}/>
+            <BubbleField numberOfBubbles={numberOfBubbles} />
           </div>
         </div>
       </div>

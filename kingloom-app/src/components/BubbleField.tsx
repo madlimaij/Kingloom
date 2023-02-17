@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../App.css';
+import Button from './Button';
 
 type BubbleFieldProps = {
   numberOfBubbles: number;
@@ -13,15 +14,12 @@ const BubbleField: React.FC<BubbleFieldProps> = ({ numberOfBubbles }) => {
     setColor('#' + n.slice(0, 6));
   };
 
+  const style = { '--button-bg-color': color };
+
   const arrayOfButtons = [];
   for (let i = 0; i < numberOfBubbles; i++) {
     arrayOfButtons.push(
-      <button
-        className="bubble"
-        onClick={handleColor}
-        style={{ backgroundColor: color }}
-        key={i}
-      ></button>
+      <Button onClick={handleColor} className={'bubble'} style={style} key={i} />
     );
   }
   return <div className="bubble-field">{arrayOfButtons}</div>;
