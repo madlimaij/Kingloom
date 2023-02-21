@@ -6,17 +6,20 @@ const BubbleField: React.FC = () => {
   const [color, setColor] = useState('#ffffff');
   const [bubbleCount, setBubbleCount] = useState(78);
 
-  const removeBubbles = (e:any) => { //@Todo: remove ans
+  const removeBubbles = (e: any) => {
+    //@Todo: remove anys
     setBubbleCount(bubbleCount - 1);
-    handleColor(e)
+    handleColor(e);
   };
-  const addBubbles = (e:any) => {
+  const addBubbles = (e: any) => {
     setBubbleCount(bubbleCount + 1);
-    handleColor(e)
+    handleColor(e);
   };
   const handleColor = (e: any) => {
-    let n = (Math.random() * 0xfffff * 1000000).toString(16);
-    setColor('#' + n.slice(0, 6));
+    // let n = (Math.random() * 0xfffff * 1000000).toString(16);
+    // setColor('#' + n.slice(0, 6));
+    let m = (Math.random() * 0xfffff * 1000000).toString(16);
+    e.currentTarget.style.setProperty('--button-bg-color', '#' + m.slice(0, 6));
   };
 
   const style = { '--button-bg-color': color };
