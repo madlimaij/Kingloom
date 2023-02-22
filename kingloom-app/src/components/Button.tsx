@@ -1,7 +1,7 @@
 import React, { MouseEventHandler } from 'react';
 
 type ButtonProps = {
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   style?: Record<string, string | number>;
   className: string;
   children?: any
