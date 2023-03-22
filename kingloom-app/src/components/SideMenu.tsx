@@ -1,18 +1,23 @@
-import React from 'react'
-import "../App.css" //?
+import React from 'react';
+import '../App.css'; //?
+import { NavType } from '../Routes/NavigationPaths';
 
-const SideMenu = () => {
-  return (
-    <div className={`side-menu`}>
-    <div>
-      <ul className="menu-list side">
-        <li>Bubble</li>
-        <li>bubble</li>
-        <li>bubble</li>
-      </ul>
-    </div>
-  </div>
-  )
+type SideMenuProps = {
+  menuList: any
 }
 
-export default SideMenu
+const SideMenu: React.FC<SideMenuProps> = ({ menuList }) => {
+  return (
+    <div className={`side-menu`}>
+      <div>
+        <ul className="menu-list side">
+          {menuList.map((menuItem:any) => (
+            <li>{menuItem}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default SideMenu;

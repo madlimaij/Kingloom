@@ -1,21 +1,27 @@
-import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import BubbleField from './components/BubbleField';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import MainBody from './components/MainBody';
-import SideMenu from './components/SideMenu';
+import NavigationPath from './Routes/NavigationPaths';
 
 function App() {
   return (
-    <div>
+    <BrowserRouter basename="/">
       <Header />
       <MainBody>
-        <SideMenu />
-        <BubbleField />
+        <Routes>
+          {NavigationPath.map((route) => (
+            <Route
+              path={route.path}
+              element={<route.component />}
+              key={route.path}
+            />
+          ))}
+        </Routes>
       </MainBody>
       <Footer />
-    </div>
+    </BrowserRouter>
   );
 }
 
